@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://xyt123:xuyanting39@learnmongo-sk3ec.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
