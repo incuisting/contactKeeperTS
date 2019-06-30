@@ -4,20 +4,19 @@
 
 This is the full app. The API can be found [here](https://github.com/bradtraversy/contact_keeper_api) with documented endpoints
 
-## Usage
-
-Install dependencies
+## 依赖安装
 
 ```bash
 npm install
 npm client-install
 ```
 
-### Mongo connection setup
+### 连接MongoDB
 
+编辑 /config/default.json 中的uri 填入MongoDB的uri
 Edit your /config/default.json file to include the correct MongoDB URI
 
-### Run Server
+### 启动开发
 
 ```bash
 npm run dev     # Express & React :3000 & :5000
