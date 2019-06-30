@@ -1,8 +1,6 @@
 # Contact Keeper
 
-> Full stack MERN contact manager with React hooks, context & JWT authentication. Part of my React course on Udemy.
-
-This is the full app. The API can be found [here](https://github.com/bradtraversy/contact_keeper_api) with documented endpoints
+前端用 react 技术栈完成,后台使用 express 完成.使用 jwt 做认证.数据存储使用 MongoDB.
 
 ## 依赖安装
 
@@ -11,10 +9,9 @@ npm install
 npm client-install
 ```
 
-### 连接MongoDB
+### 配置 MongoDB
 
-编辑 /config/default.json 中的uri 填入MongoDB的uri
-Edit your /config/default.json file to include the correct MongoDB URI
+编辑 /config/default.json 中的 uri 填入 MongoDB 的 uri
 
 ### 启动开发
 
