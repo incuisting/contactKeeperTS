@@ -1,5 +1,6 @@
 # Contact Keeper
 
+在线通讯录,实现注册登录,前端鉴权
 前端用 react 技术栈完成,后台使用 express 完成.使用 jwt 做认证.数据存储使用 MongoDB.
 
 ## 依赖安装
