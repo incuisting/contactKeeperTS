@@ -1,7 +1,7 @@
-export interface ContextProps {
-  children: JSX.Element[] | JSX.Element
+export interface IContextProps {
+  children: JSX.Element[] | JSX.Element;
 }
-export interface Aciton {
-  type: string
-  payload?: any
+export interface IAciton {
+  type: string;
+  payload?: any;
 }
