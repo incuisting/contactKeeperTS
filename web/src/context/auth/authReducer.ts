@@ -10,7 +10,16 @@ import {
 } from "../types";
 import { IAciton } from "../common";
 
-export default (state: any, action: IAciton) => {
+export interface IState {
+  error?: string;
+  user?: {
+    name: string;
+  };
+  loading: boolean;
+  isAuthenticated?: boolean;
+  token: string;
+}
+export default (state: IState, action: IAciton) => {
   switch (action.type) {
     case USER_LOADED:
       return {

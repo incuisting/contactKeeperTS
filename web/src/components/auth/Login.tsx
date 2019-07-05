@@ -1,49 +1,48 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { RouteComponentProps } from 'react-router-dom'
-import AuthContext from '../../context/auth/authContext'
-import AlertContext from '../../context/alert/alertContext'
+import React, { useState, useContext, useEffect } from "react";
+import { RouteComponentProps } from "react-router-dom";
+import AuthContext from "../../context/auth/authContext";
+import AlertContext from "../../context/alert/alertContext";
 
-interface IProps extends RouteComponentProps {}
-const Login = (props: IProps) => {
-  const alertContext = useContext(AlertContext)
-  const authContext = useContext(AuthContext)
+const Login = (props: RouteComponentProps) => {
+  const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
 
-  const { setAlert } = alertContext
-  const { login, error, clearErrors, isAuthenticated } = authContext
+  const { setAlert } = alertContext;
+  const { login, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/')
+      props.history.push("/");
     }
 
-    if (error === 'Invalid Credentials') {
-      setAlert(error, 'danger')
-      clearErrors()
+    if (error === "Invalid Credentials" && clearErrors) {
+      setAlert(error, "danger");
+      clearErrors();
     }
     // eslint-disable-next-line
-  }, [error, isAuthenticated, props.history])
+  }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    email: '',
-    password: ''
-  })
+    email: "",
+    password: "",
+  });
 
-  const { email, password } = user
+  const { email, password } = user;
 
   const onChange = (e: any) =>
-    setUser({ ...user, [e.target.name]: e.target.value })
+    setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e: any) => {
-    e.preventDefault()
-    if (email === '' || password === '') {
-      setAlert('Please fill in all fields', 'danger')
-    } else {
+    e.preventDefault();
+    if (email === "" || password === "") {
+      setAlert("Please fill in all fields", "danger");
+    } else if (login) {
       login({
         email,
-        password
-      })
+        password,
+      });
     }
-  }
+  };
 
   return (
     <div className="form-container">
@@ -78,7 +77,7 @@ const Login = (props: IProps) => {
         />
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

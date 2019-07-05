@@ -1,30 +1,32 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import ContactContext from '../../context/contact/contactContext'
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import ContactContext from "../../context/contact/contactContext";
 
 interface IProps {
-  contact: any
+  contact: any;
 }
 const ContactItem = ({ contact }: IProps) => {
-  const contactContext = useContext(ContactContext)
-  const { deleteContact, setCurrent, clearCurrent } = contactContext
+  const contactContext = useContext(ContactContext);
+  const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-  const { _id, name, email, phone, type } = contact
+  const { _id, name, email, phone, type } = contact;
 
   const onDelete = () => {
-    deleteContact(_id)
-    clearCurrent()
-  }
+    if (deleteContact && clearCurrent) {
+      deleteContact(_id);
+      clearCurrent();
+    }
+  };
 
   return (
     <div className="card bg-light">
       <h3 className="text-primary text-left">
-        {name}{' '}
+        {name}{" "}
         <span
-          style={{ float: 'right' }}
+          style={{ float: "right" }}
           className={
-            'badge ' +
-            (type === 'professional' ? 'badge-success' : 'badge-primary')
+            "badge " +
+            (type === "professional" ? "badge-success" : "badge-primary")
           }
         >
           {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -45,7 +47,11 @@ const ContactItem = ({ contact }: IProps) => {
       <p>
         <button
           className="btn btn-dark btn-sm"
-          onClick={() => setCurrent(contact)}
+          onClick={() => {
+            if (setCurrent) {
+              setCurrent(contact);
+            }
+          }}
         >
           Edit
         </button>
@@ -54,11 +60,11 @@ const ContactItem = ({ contact }: IProps) => {
         </button>
       </p>
     </div>
-  )
-}
+  );
+};
 
 ContactItem.propTypes = {
-  contact: PropTypes.object.isRequired
-}
+  contact: PropTypes.object.isRequired,
+};
 
-export default ContactItem
+export default ContactItem;

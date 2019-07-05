@@ -1,54 +1,56 @@
-import React, { useState, useContext, useEffect } from 'react'
-import ContactContext from '../../context/contact/contactContext'
+import React, { useState, useContext, useEffect } from "react";
+import ContactContext from "../../context/contact/contactContext";
 
 const ContactForm = () => {
-  const contactContext = useContext(ContactContext)
+  const contactContext = useContext(ContactContext);
 
-  const { addContact, updateContact, clearCurrent, current } = contactContext
+  const { addContact, updateContact, clearCurrent, current } = contactContext;
 
   useEffect(() => {
-    if (current !== null) {
-      setContact(current)
+    if (current !== null && current) {
+      setContact(current);
     } else {
       setContact({
-        name: '',
-        email: '',
-        phone: '',
-        type: 'personal'
-      })
+        name: "",
+        email: "",
+        phone: "",
+        type: "personal",
+      });
     }
-  }, [contactContext, current])
+  }, [contactContext, current]);
 
   const [contact, setContact] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    type: 'personal'
-  })
+    name: "",
+    email: "",
+    phone: "",
+    type: "personal",
+  });
 
-  const { name, email, phone, type } = contact
+  const { name, email, phone, type } = contact;
 
   const onChange = (e: any) =>
-    setContact({ ...contact, [e.target.name]: e.target.value })
+    setContact({ ...contact, [e.target.name]: e.target.value });
 
   const onSubmit = (e: any) => {
-    e.preventDefault()
-    if (current === null) {
-      addContact(contact)
-    } else {
-      updateContact(contact)
+    e.preventDefault();
+    if (current === null && addContact && contact) {
+      addContact(contact);
+    } else if (updateContact) {
+      updateContact(contact);
     }
-    clearAll()
-  }
+    clearAll();
+  };
 
   const clearAll = () => {
-    clearCurrent()
-  }
+    if (clearCurrent) {
+      clearCurrent();
+    }
+  };
 
   return (
     <form onSubmit={onSubmit}>
       <h2 className="text-primary">
-        {current ? 'Edit Contact' : 'Add Contact'}
+        {current ? "Edit Contact" : "Add Contact"}
       </h2>
       <input
         type="text"
@@ -76,22 +78,22 @@ const ContactForm = () => {
         type="radio"
         name="type"
         value="personal"
-        checked={type === 'personal'}
+        checked={type === "personal"}
         onChange={onChange}
-      />{' '}
-      Personal{' '}
+      />{" "}
+      Personal{" "}
       <input
         type="radio"
         name="type"
         value="professional"
-        checked={type === 'professional'}
+        checked={type === "professional"}
         onChange={onChange}
-      />{' '}
+      />{" "}
       Professional
       <div>
         <input
           type="submit"
-          value={current ? 'Update Contact' : 'Add Contact'}
+          value={current ? "Update Contact" : "Add Contact"}
           className="btn btn-primary btn-block"
         />
       </div>
@@ -103,7 +105,7 @@ const ContactForm = () => {
         </div>
       )}
     </form>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

@@ -1,18 +1,11 @@
 import { createContext } from "react";
-
-interface IAuthContent {
-  isAuthenticated: any;
-  loading: any;
-  loadUser: any;
-  logout: any;
-  user: {
-    name: string;
-  };
-  login: any;
-  error: any;
-  clearErrors: any;
-  register: any;
-  token: any;
+import { IState } from "./authReducer";
+interface IAuthContent extends IState {
+  loadUser: () => void;
+  logout: () => void;
+  login: (formData: any) => void;
+  clearErrors: () => void;
+  register: (formData: any) => void;
 }
 const authContext = createContext<Partial<IAuthContent>>({});
 

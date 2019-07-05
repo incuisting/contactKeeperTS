@@ -18,10 +18,7 @@ import { IContextProps } from "../common";
 const AuthState = (props: IContextProps) => {
   const initialState = {
     token: localStorage.getItem("token"),
-    isAuthenticated: null,
     loading: true,
-    user: null,
-    error: null,
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);

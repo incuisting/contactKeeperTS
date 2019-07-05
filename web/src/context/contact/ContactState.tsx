@@ -14,6 +14,7 @@ import {
   CONTACT_ERROR,
 } from "../types";
 import { IContextProps } from "../common";
+import { IContact } from "./contactReducer";
 import ContactContext from "./contactContext";
 
 const ContactState = (props: IContextProps) => {
@@ -44,7 +45,7 @@ const ContactState = (props: IContextProps) => {
   };
 
   // Add Contact
-  const addContact = async (contact: any) => {
+  const addContact = async (contact: IContact) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +85,7 @@ const ContactState = (props: IContextProps) => {
   };
 
   // Update Contact
-  const updateContact = async (contact: any) => {
+  const updateContact = async (contact: IContact) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -116,7 +117,7 @@ const ContactState = (props: IContextProps) => {
   };
 
   // Set Current Contact
-  const setCurrent = (contact: any) => {
+  const setCurrent = (contact: IContact) => {
     dispatch({ type: SET_CURRENT, payload: contact });
   };
 

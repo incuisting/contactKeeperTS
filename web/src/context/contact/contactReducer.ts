@@ -12,23 +12,23 @@ import {
 } from "../types";
 import { IAciton } from "../common";
 
-interface IContact {
-  date: string;
+export interface IContact {
+  date?: string;
   email: string;
   name: string;
   phone: string;
   type: string;
-  user: string;
-  __v: number;
-  _id: number;
+  user?: string;
+  __v?: number;
+  _id?: number;
 }
 
-interface IState {
+export interface IState {
   contacts: any;
   // TODO this contatcts type can not be any
   loading?: boolean | null;
   error: string | null;
-  current: any;
+  current: IContact;
   filtered: IContact[] | null;
 }
 export default (state: IState, action: IAciton) => {

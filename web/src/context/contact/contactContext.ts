@@ -1,20 +1,16 @@
 import { createContext } from "react";
+import { IContact, IState } from "./contactReducer";
 
-interface IContactContext {
-  clearContacts: any;
-  filtered: any;
-  clearFilter: any;
-  filterContacts: any;
-  addContact: any;
-  updateContact: any;
-  clearCurrent: any;
-  current: any;
-  deleteContact: any;
-  setCurrent: any;
-  contacts: any;
-  getContacts: any;
-  loading: boolean;
-  error: any;
+interface IContactContext extends IState {
+  clearContacts: () => void;
+  clearFilter: () => void;
+  filterContacts: (text: string) => void;
+  addContact: (contact: IContact) => void;
+  updateContact: (contact: IContact) => void;
+  clearCurrent: () => void;
+  deleteContact: (id: string | number) => void;
+  setCurrent: (contact: IContact) => void;
+  getContacts: () => void;
 }
 const contactContext = createContext<Partial<IContactContext>>({});
 
