@@ -15,7 +15,7 @@ const Register = (props: RouteComponentProps) => {
       props.history.push("/");
     }
 
-    if (error === "User already exists" && clearErrors) {
+    if (error === "User already exists" && clearErrors && setAlert) {
       setAlert(error, "danger");
       clearErrors();
     }
@@ -36,9 +36,9 @@ const Register = (props: RouteComponentProps) => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    if (name === "" || email === "" || password === "") {
+    if (setAlert && (name === "" || email === "" || password === "")) {
       setAlert("Please enter all fields", "danger");
-    } else if (password !== password2) {
+    } else if (setAlert && password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else if (register) {
       register({

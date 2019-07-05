@@ -15,7 +15,7 @@ const Login = (props: RouteComponentProps) => {
       props.history.push("/");
     }
 
-    if (error === "Invalid Credentials" && clearErrors) {
+    if (error === "Invalid Credentials" && clearErrors && setAlert) {
       setAlert(error, "danger");
       clearErrors();
     }
@@ -34,7 +34,7 @@ const Login = (props: RouteComponentProps) => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    if (email === "" || password === "") {
+    if (setAlert && (email === "" || password === "")) {
       setAlert("Please fill in all fields", "danger");
     } else if (login) {
       login({
