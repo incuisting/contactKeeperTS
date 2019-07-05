@@ -29,10 +29,10 @@ const Login = (props: RouteComponentProps) => {
 
   const { email, password } = user;
 
-  const onChange = (e: any) =>
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setUser({ ...user, [e.target.name]: e.target.value });
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (setAlert && (email === "" || password === "")) {
       setAlert("Please fill in all fields", "danger");

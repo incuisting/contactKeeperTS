@@ -13,7 +13,7 @@ const ContactFilter = () => {
     }
   });
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (text.current && text.current.value !== "" && filterContacts) {
       filterContacts(e.target.value);
     } else if (clearFilter) {

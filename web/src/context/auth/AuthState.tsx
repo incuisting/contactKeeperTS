@@ -14,6 +14,7 @@ import {
   CLEAR_ERRORS,
 } from "../types";
 import { IContextProps } from "../common";
+import { ILoinFormData, IRegisterFormData } from "./authContext";
 
 const AuthState = (props: IContextProps) => {
   const initialState = {
@@ -42,7 +43,7 @@ const AuthState = (props: IContextProps) => {
   };
 
   // Register User
-  const register = async (formData: any) => {
+  const register = async (formData: IRegisterFormData) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +68,7 @@ const AuthState = (props: IContextProps) => {
   };
 
   // Login User
-  const login = async (formData: any) => {
+  const login = async (formData: ILoinFormData) => {
     const config = {
       headers: {
         "Content-Type": "application/json",

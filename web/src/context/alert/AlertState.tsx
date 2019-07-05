@@ -4,9 +4,10 @@ import AlertContext from "./alertContext";
 import alertReducer from "./alertReducer";
 import { SET_ALERT, REMOVE_ALERT } from "../types";
 import { IContextProps } from "../common";
+import { IAlert } from "./alertReducer";
 
 const AlertState = (props: IContextProps) => {
-  const initialState: any = [];
+  const initialState: IAlert[] = [];
 
   const [state, dispatch] = useReducer(alertReducer, initialState);
 

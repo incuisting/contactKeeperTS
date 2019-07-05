@@ -31,10 +31,10 @@ const Register = (props: RouteComponentProps) => {
 
   const { name, email, password, password2 } = user;
 
-  const onChange = (e: any) =>
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setUser({ ...user, [e.target.name]: e.target.value });
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (setAlert && (name === "" || email === "" || password === "")) {
       setAlert("Please enter all fields", "danger");

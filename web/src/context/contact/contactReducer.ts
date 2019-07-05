@@ -57,7 +57,7 @@ export default (state: IState, action: IAciton) => {
       return {
         ...state,
         contacts: state.contacts.filter(
-          (contact: any) => contact._id !== action.payload,
+          (contact: IContact) => contact._id !== action.payload,
         ),
         loading: false,
       };

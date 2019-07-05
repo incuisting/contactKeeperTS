@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ContactContext from "../../context/contact/contactContext";
+import { IContact } from "../../context/contact/contactReducer";
 
 interface IProps {
-  contact: any;
+  contact: IContact;
 }
 const ContactItem = ({ contact }: IProps) => {
   const contactContext = useContext(ContactContext);
@@ -12,7 +13,7 @@ const ContactItem = ({ contact }: IProps) => {
   const { _id, name, email, phone, type } = contact;
 
   const onDelete = () => {
-    if (deleteContact && clearCurrent) {
+    if (deleteContact && clearCurrent && _id) {
       deleteContact(_id);
       clearCurrent();
     }

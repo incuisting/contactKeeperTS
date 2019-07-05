@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import ContactItem from "./ContactItem";
 import Spinner from "../layout/Spinner";
 import ContactContext from "../../context/contact/contactContext";
+import { IContact } from "../../context/contact/contactReducer";
 
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
@@ -16,7 +17,7 @@ const Contacts = () => {
     // eslint-disable-next-line
   }, []);
 
-  if (contacts !== null && contacts.length === 0 && !loading) {
+  if (contacts !== null && contacts && contacts.length === 0 && !loading) {
     return <h4>Please add a contact</h4>;
   }
 
@@ -25,7 +26,7 @@ const Contacts = () => {
       {contacts !== null && !loading ? (
         <TransitionGroup>
           {filtered && filtered !== null
-            ? filtered.map((contact: any) => (
+            ? filtered.map((contact: IContact) => (
                 <CSSTransition
                   key={contact._id}
                   timeout={500}
@@ -34,7 +35,8 @@ const Contacts = () => {
                   <ContactItem contact={contact} />
                 </CSSTransition>
               ))
-            : contacts.map((contact: any) => (
+            : contacts &&
+              contacts.map((contact: IContact) => (
                 <CSSTransition
                   key={contact._id}
                   timeout={500}
