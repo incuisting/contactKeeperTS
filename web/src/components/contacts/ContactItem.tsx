@@ -30,7 +30,7 @@ const ContactItem = ({ contact }: IProps) => {
             (type === "professional" ? "badge-success" : "badge-primary")
           }
         >
-          {type.charAt(0).toUpperCase() + type.slice(1)}
+          {type === "professional" ? "工作" : "个人"}
         </span>
       </h3>
       <ul className="list">
@@ -54,10 +54,10 @@ const ContactItem = ({ contact }: IProps) => {
             }
           }}
         >
-          Edit
+          编辑
         </button>
         <button className="btn btn-danger btn-sm" onClick={onDelete}>
-          Delete
+          删除
         </button>
       </p>
     </div>

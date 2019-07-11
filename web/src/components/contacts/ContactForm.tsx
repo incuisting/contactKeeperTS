@@ -49,9 +49,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h2 className="text-primary">
-        {current ? "Edit Contact" : "Add Contact"}
-      </h2>
+      <h2 className="text-primary">{current ? "编辑联系人" : "添加联系人"}</h2>
       <input
         type="text"
         placeholder="Name"
@@ -73,7 +71,7 @@ const ContactForm = () => {
         value={phone}
         onChange={onChange}
       />
-      <h5>Contact Type</h5>
+      <h5>联系人类型</h5>
       <input
         type="radio"
         name="type"
@@ -93,7 +91,7 @@ const ContactForm = () => {
       <div>
         <input
           type="submit"
-          value={current ? "Update Contact" : "Add Contact"}
+          value={current ? "更新联系人" : "添加联系人"}
           className="btn btn-primary btn-block"
         />
       </div>

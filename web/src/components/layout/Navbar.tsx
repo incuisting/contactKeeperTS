@@ -26,7 +26,7 @@ const Navbar = ({ title, icon }: { title: string; icon: string }) => {
       <li>
         <a onClick={onLogout} href="#!">
           <i className="fas fa-sign-out-alt" />{" "}
-          <span className="hide-sm">Logout</span>
+          <span className="hide-sm">退出</span>
         </a>
       </li>
     </Fragment>
@@ -35,10 +35,10 @@ const Navbar = ({ title, icon }: { title: string; icon: string }) => {
   const guestLinks = (
     <Fragment>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to="/register">注册</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to="/login">登入</Link>
       </li>
     </Fragment>
   );
