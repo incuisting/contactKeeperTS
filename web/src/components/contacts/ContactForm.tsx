@@ -79,7 +79,7 @@ const ContactForm = () => {
         checked={type === "personal"}
         onChange={onChange}
       />{" "}
-      Personal{" "}
+      个人{" "}
       <input
         type="radio"
         name="type"
@@ -87,7 +87,7 @@ const ContactForm = () => {
         checked={type === "professional"}
         onChange={onChange}
       />{" "}
-      Professional
+      工作
       <div>
         <input
           type="submit"
@@ -98,7 +98,7 @@ const ContactForm = () => {
       {current && (
         <div>
           <button className="btn btn-light btn-block" onClick={clearAll}>
-            Clear
+            清空
           </button>
         </div>
       )}

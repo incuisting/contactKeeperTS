@@ -26,7 +26,7 @@ const ContactFilter = () => {
       <input
         ref={text}
         type="text"
-        placeholder="Filter Contacts..."
+        placeholder="过滤联系人..."
         onChange={onChange}
       />
     </form>
