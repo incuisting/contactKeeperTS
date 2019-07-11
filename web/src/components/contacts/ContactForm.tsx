@@ -52,21 +52,21 @@ const ContactForm = () => {
       <h2 className="text-primary">{current ? "编辑联系人" : "添加联系人"}</h2>
       <input
         type="text"
-        placeholder="Name"
+        placeholder="姓名"
         name="name"
         value={name}
         onChange={onChange}
       />
       <input
         type="email"
-        placeholder="Email"
+        placeholder="邮箱"
         name="email"
         value={email}
         onChange={onChange}
       />
       <input
         type="text"
-        placeholder="Phone"
+        placeholder="联系方式"
         name="phone"
         value={phone}
         onChange={onChange}
