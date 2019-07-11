@@ -52,11 +52,11 @@ const Register = (props: RouteComponentProps) => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">Register</span>
+        账号 <span className="text-primary">注册</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">用户名</label>
           <input
             type="text"
             name="name"
@@ -66,7 +66,7 @@ const Register = (props: RouteComponentProps) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email">邮箱</label>
           <input
             type="email"
             name="email"
@@ -76,7 +76,7 @@ const Register = (props: RouteComponentProps) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">密码</label>
           <input
             type="password"
             name="password"
@@ -87,7 +87,7 @@ const Register = (props: RouteComponentProps) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password2">Confirm Password</label>
+          <label htmlFor="password2">确认密码</label>
           <input
             type="password"
             name="password2"

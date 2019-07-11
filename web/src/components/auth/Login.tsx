@@ -47,11 +47,11 @@ const Login = (props: RouteComponentProps) => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">Login</span>
+        账号 <span className="text-primary">登入</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email">邮箱地址</label>
           <input
             type="email"
             name="email"
@@ -61,7 +61,7 @@ const Login = (props: RouteComponentProps) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">密码</label>
           <input
             type="password"
             name="password"
