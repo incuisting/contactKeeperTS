@@ -99,7 +99,7 @@ const Register = (props: RouteComponentProps) => {
         </div>
         <input
           type="submit"
-          value="Register"
+          value="注册"
           className="btn btn-primary btn-block"
         />
       </form>

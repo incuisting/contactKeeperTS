@@ -72,7 +72,7 @@ const Login = (props: RouteComponentProps) => {
         </div>
         <input
           type="submit"
-          value="Login"
+          value="登入"
           className="btn btn-primary btn-block"
         />
       </form>
